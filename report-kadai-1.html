@@ -36,6 +36,7 @@ var torus = new THREE.Mesh( torusGeometry, torusMaterial );
 torus.position.set( 0.5, 0, -20);
 //scene.add( torus );
     
+    //平面
 var geometry = new THREE.PlaneGeometry( 3.3, 1.5, 24 );
 var material = new THREE.MeshPhongMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
 var plane = new THREE.Mesh( geometry, material );
@@ -50,7 +51,7 @@ var torusKnotGeometry = new THREE.TorusKnotGeometry( 1.5, 0.3, 20, 6, 3, 5 );
 var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x00ff00 } );
 var torusKnot = new THREE.Mesh( torusKnotGeometry, torusKnotMaterial );
 torusKnot.position.set( 0, 0, -15 );
-scene.add( torusKnot );
+//scene.add( torusKnot );
 
 //球
 var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
@@ -59,8 +60,16 @@ var sphere1 = new THREE.Mesh( sphereGeometry, sphereMaterial );
 var sphere2 = new THREE.Mesh( sphereGeometry, sphereMaterial );
 sphere1.position.set( 1.3, 0, -5 );
 sphere2.position.set( -1.3, 0, -5 );
-scene.add( sphere1 );
-scene.add( sphere2 );
+//scene.add( sphere1 );
+//scene.add( sphere2 );
+    
+ var geometry = new THREE.BoxGeometry(1, 1, 1);
+ var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+ var box1 = new THREE.Mesh(geometry, material);
+ var box2 = new THREE.Mesh(geometry, material);
+ box1.position.set(1.5,1.5,-5.5);
+ box2.position.set(-1.5,1.5,-5.5);
+ scene.add(box);
 
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -80,13 +89,17 @@ scene.add( sphere2 );
       // 箱を回転させる
       torusKnot.rotation.x += 0.01;
       torusKnot.rotation.y += 0.01;
-      sphere1.rotation.y += 0.01;
-      sphere2.rotation.y += 0.01;
+      //sphere1.rotation.y += 0.01;
+      //sphere2.rotation.y += 0.01;
       plane.rotation.x += 0.03;
       plane.rotation.y += 0.01;
+      box1.rotaition.x += 0.06;
+      box2.rotaition.y += 0.06;
 
       torus.position.z +=0.01;
       plane.position.z +=0.05;
+      box1.position.x -=0.01;
+      box2.position.x +=0.01;
   
       renderer.render(scene, camera);
     };
