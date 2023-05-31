@@ -55,7 +55,7 @@ torusKnot.position.set( 0, 0, -15 );
 
 //球
 var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
-var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0xff8800,wireframe: true} );
+var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff,wireframe: true} );
 var sphere1 = new THREE.Mesh( sphereGeometry, sphereMaterial );
 var sphere2 = new THREE.Mesh( sphereGeometry, sphereMaterial );
 sphere1.position.set( 1.3, 0, -5 );
@@ -65,11 +65,11 @@ scene.add( sphere2 );
     
  var geometry = new THREE.BoxGeometry(0.5, 32, 32);
  var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
- var box1 = new THREE.Mesh(geometry, material);
+ var box = new THREE.Mesh(geometry, material);
  //var box2 = new THREE.Mesh(geometry, material);
- box1.position.set(0,0,-5);
+ box.position.set(0,0,-5);
  //box2.position.set(-1.5,0,-5);
- scene.add(box1);
+ scene.add(box);
  //scene.add(box2);
 
     // 平行光源1
@@ -94,7 +94,7 @@ scene.add( sphere2 );
       sphere2.rotation.y += 0.01;
       plane.rotation.x += 0.03;
       plane.rotation.y += 0.01;
-      //box1.rotaition.x += 0.06;
+      box.rotaition.x += 0.06;
       //box2.rotaition.x += 0.06;
 
       torus.position.z +=0.01;
